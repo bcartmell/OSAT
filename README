@@ -3,6 +3,6 @@ To extract FreeCad files in preparation for GIT tracking, run the following comm
 
 
 To Compress an extracted folder back into a usable FreeCad file, run the following commad:
-  $python <path/to/doctools.py> create <path to 'Document.xml'> <new_file_name.FCStd>
+  $python <path/to/doctools.py> create <path to containing folder> <new_file_name>
 
 The 'Document.xml' file can be found among the files created by a previous extraction.
