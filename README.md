@@ -17,3 +17,9 @@ To Compress an extracted folder back into a usable FreeCad file, run the followi
 ```
 
 The 'Document.xml' file can be found among the files created by a previous extraction.
+
+
+Update!
+Adding JS extractor.
+  - Requires node-zipfile
+    - which requires libzip
