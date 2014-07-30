@@ -21,5 +21,4 @@ The 'Document.xml' file can be found among the files created by a previous extra
 
 ### Update!
 Adding JS extractor.
-  - Requires node-zipfile
-    - which requires libzip
+  - Requires JSZip (Maybe)
