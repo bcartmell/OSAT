@@ -4,6 +4,11 @@
  *  The first argument specifies create or extract
  *  The second specifies the target file or directory
  *  The third specifies where to put the output
+ *  
+ *  FreeCad files are really just zip files with a different file extension.
+ *  In order to track differences in version, we must extract the zip file
+ *  and track the resulting directory.  
+ *  When a copy of the file is requested, we'll zip it up again for delivery.
  *
  * */
 
@@ -11,27 +16,42 @@
  *  $node doctools.js teapot_with_sketch.fcstd teapot_with_sketch
  *
  * */ 
+'use strict';
 
-'use strict'
-var JSZip = require("jszip"),
-    fs = require("fs"),
-    path = require("path");
+var JSZip = require('jszip'),
+    fs = require('fs'),
+    path = require('path'),
+    dir = require('node-dir');
 
 var freeCadHandler = {};
 var args = process.argv.slice(2);
 
 freeCadHandler.create = function(source) {
-  path.exists(source, function() {
-    var zip = new JSZip();
-    zip.folder(source);
-    var zipfile = zip.generate({type:"nodebuffer", compression: "DEFLATE"});
+  // Create an empty JSZip object to represent our zip file.
+  var zip = new JSZip();
 
-    fs.writeFile("newFile.fcstd", zipfile, function(err) {
-      if (err) throw err;
-    });
+  // Find subdirectories and add them to the zip
+  dir.subdirs(source, function(err, subdirs ) {  if (err) throw err;
+    for (var i=0; i<subdirs.length; i++) {
+      // strip path to original folder from the directory name
+      var dirName = subdirs[i].slice(source.length);
+      // Create a directory of the same name in the zip file
+      zip.folder(dirName);
+      console.log('added subdir: '+ dirName);
+    } // end for()
+  }); // end dirs.subdirs()
 
-    console.log('done.');
+  // Add the files to the zipfile
+  dir.files(source, function(err, files) { if (err) throw err;
+    for (var i=0; i<files.length; i++) {
+
+      /* Pick up here*/
+      var data, name;
+      console.log((files[i]));
+      zip.file();
+    }
   });
+  //var zipfile = zip.generate({type:"nodebuffer", compression: "DEFLATE"});
 };
 
 freeCadHandler.extract = function(source, destination) {
