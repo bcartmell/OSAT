@@ -3,7 +3,7 @@
 # (c) 2010 Werner Mayer LGPL
 # FreeCAD Python script to work with the FCStd file format.
 
-# Script modified by OSAT to be accessible from commad line for 
+# Script modified by OSATT to be accessible from commad line for 
 # to extract FreeCad files for tracking in GIT and re-compressing
 # for use.
 
@@ -76,6 +76,8 @@ def getFilesList(filename):
 		files.append(dirname)
 	return files
 
+
+# Custom additions by OSATT
 if action == "create":
   # Create FreeCad file
   print "Creating document..."
