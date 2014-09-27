@@ -1,0 +1,16 @@
+{
+  "name": "osatt-cad-parsing",
+  "version": "0.0.0",
+  "description": "For the sharing and collaboration of open source hardware",
+  "main": "",
+  "scripts": {
+    "test": "node tesScript.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bcartmell/OSATT-CAD-parsing"
+  },
+  "author": "Brady Cartmell",
+  "license": "BSD",
+  "readmeFilename": "README.md"
+}
