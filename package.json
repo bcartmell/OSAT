@@ -10,7 +10,15 @@
     "type": "git",
     "url": "https://github.com/bcartmell/OSATT-CAD-parsing"
   },
+  "dipendencies": {
+  },
   "author": "Brady Cartmell",
   "license": "BSD",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "jszip": "",
+    "path": "",
+    "node-dir": ""
+    "node-fs": "~0.1.7",
+  }
 }
