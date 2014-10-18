@@ -4,7 +4,7 @@
   "description": "For the sharing and collaboration of open source hardware",
   "main": "",
   "scripts": {
-    "test": "node tesScript.js"
+    "test": "node testScript.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   "dependencies": {
     "jszip": "",
     "path": "",
-    "node-dir": ""
-    "node-fs": "~0.1.7",
+    "node-dir": "",
+    "node-fs": "~0.1.7"
   }
 }

@@ -1,6 +1,6 @@
 'use strict';
 var jsz = require('jszip'),
-    fs = require('fs'),
+    fs = require('node-fs'),
     path = require('path'),
     dir = require('node-dir'),
     helpers = require('./helpers.js');
@@ -19,17 +19,21 @@ var jsz = require('jszip'),
  *
  * */
 
-/* Test command :
- *  $node doctools.js teapot_with_sketch.fcstd teapot_with_sketch
- *
- * */ 
-
-function nameFile(source) {
-  source = source.split('/');
-  source = source[source.length-1];
-  source = source.slice[0, source.indexOf('.')];
-  return (source || "teapot_with_shapes") +".fcstd";
+function fileName(path, withExt) {
+  path = path.split('/');
+  path = path[path.length-1];
+  path = path.slice[0, path.indexOf('.')];
+  return withExt ? 
+    (source) +".fcstd" :
+    source;
 }
+
+exports.extract = function(source, destination) {
+  if (!destination)  {
+    destination = fileName(source);
+  }
+  console.log('extracting to '+ destination +' from '+ source +'.');
+}; // end .extract()
 
 exports.create = function(source) {
   // resolve source
@@ -66,6 +70,3 @@ exports.create = function(source) {
   });
 }; //  end create();
 
-exports.extract = function(source, destination) {
-  console.log('extracting to '+ destination +' from '+ source +'.');
-};
