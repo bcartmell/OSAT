@@ -1,9 +1,9 @@
 'use strict';
 var jsz = require('jszip'),
-    fs = require('node-fs'),
+    fs = require('fs'),
     path = require('path'),
     dir = require('node-dir'),
-    helpers = require('./helpers.js'),
+    helpers = require('./helpers.js');
 
 /*
  *  OSATT FreeCad files handler
@@ -32,41 +32,115 @@ exports.extract = function(source, destination) {
   if (!destination)  {
     destination = fileName(source);
   }
-  console.log('extracting to '+ destination +' from '+ source +'.');
+  fs.mkdir(destination, function() {
+    console.log('extracting to '+ destination +' from '+ source +'.');
+  });
 }; // end .extract()
 
-exports.create = function(source) {
+exports.addFilesToZip = function(files, zipObject, callback) {
+  // A recursive function that loops through an array
+  // of file paths and adds each one to a zip file.
+
+  var filePath = files.pop();
+  // get the last element from the files array.
+
+
+  var fileName = helpers.whatsFilename(filePath, true);
+  // set fileName by stripping directory information from filePath
+
+  console.log('adding '+ fileName +' to zipObject');
+
+  fs.readFile(filePath, function(err, fileContent) {
+  // read the file with nodes fs(file-system) library
+
+    zipObject.file(fileName, fileContent, {compression:"DEFLATE"});  
+    // add the file to the zip folder.
+
+    if (files.length > 0) {
+    // If the array still has files,
+
+      exports.addFilesToZip(files, zipObject, callback);
+      //  run addFiles again.
+
+    } else if (callback) {
+    // loop is over,
+
+      callback(zipObject);
+      // write the file.
+    }
+  });
+  // end fs.readFile() call
+
+}; // end addFiles(files) definition
+
+exports.writeFcstd = function(newFcstd) {
+// write file to system
+
+  console.log('\ncreating write buffer');
+
+  var buffer = newFcstd.generate({type:"nodebuffer"});
+  // generate buffer for new file
+
+  fs.writeFile(newFcstd.name, buffer, function(err) {
+  // write the file
+    if (err) throw err;
+
+    console.log('new Fcstd named "'+ newFcstd.name +'" created!');
+    // confirm that the process completed successfully .
+
+  }); // end writeFile()
+}; // End writeFile() definition
+
+
+exports.create = function(source, destination) {
   // resolve source
   source = helpers.resolveFile(source);
 
   // Define new zip object and set attributes.
   var fcstd = new jsz();
   console.log('finding the file name from '+ source);
-  fcstd.name = helpers.whatsFilename(source);
-  fcstd.dir = true;
+  fcstd.name = helpers.whatsFilename(source) +'.fcstd';
+  fcstd.dir = true;                                         
 
-  // Document.xml needs to be the first file in the folder.
-  fs.readFile(source+'/Document.xml', function(err, fileContent){
+  console.log('name of new file set to '+ fcstd.name);
+
+  dir.files(source, function(err, files) {
+    // find all files in source directory
+
     if (err) throw err;
-    fcstd.file('Document.xml', fileContent, {compression:"DEFLATE"});  
 
-    // Add the rest of the files
-    dir.readFiles(source, {shortName:true}, function(err, fileContent, fileName, next) {
-        if (err) throw err;
-        if (fileName != 'Document.xml') {
-          fcstd.file(fileName, fileContent, {compression:"DEFLATE"});  
-        }
-        next();
-      }, function(err, files) { // when finished
-        if (err) throw err;
-        // generate buffer for new file
-        var buffer = fcstd.generate({type:"nodebuffer"});
-        // write the file
-        fs.writeFile(fcstd.name, buffer, function(err) {
-          if (err) throw err;
-          console.log('new Fcstd created!');
-      }); // end writeFile()
-    }); // end dir.readFiles
-  });
+    for (var i=0; i<files.length; i++) {
+    // for each file path in the returned array.
+      console.log('checking '+ files[i] +' for Document.xml');
+
+      if (files[i].indexOf('Document.xml') != -1) {
+
+        console.log('found Document.xml at postion '+ i + '\n');
+        // if it is Document.xml...
+
+        var docXml = files.splice(i, 1)[0];
+        // pull it out of the array.
+
+        console.log('docXml is '+ docXml +'\n');
+
+        files.push(docXml);
+        // and move it to the end of the array.
+
+        break;
+        // end the for loop, we got what we needed.
+
+      } // end if
+    } // end for loop
+
+    exports.addFilesToZip(files, fcstd, function(newFcstd) {
+    // add the files to the zip,
+
+      console.log('writing file');
+      exports.writeFcstd(newFcstd);
+      // then write the file.
+
+    }); // end addFilesToZip() call
+  }); // end dir.files() call
+
 }; //  end create();
 
