@@ -54,6 +54,7 @@ def extractDocument(filename, outpath):
 
 def createDocument(filename, outpath):
   files=getFilesList(filename)
+  print "files: "+ files
   compress=zipfile.ZipFile(outpath,'w',zipfile.ZIP_DEFLATED)
   for i in files:
     dirs=os.path.split(i)

@@ -91,6 +91,31 @@ exports.writeFcstd = function(newFcstd) {
   }); // end writeFile()
 }; // End writeFile() definition
 
+function sortFcstdArray(files, targetName) {
+  for (var i=0; i<files.length; i++) {
+  // for each file path in the returned array.
+
+    console.log('checking '+ files[i] +' for '+ targetName);
+    if (files[i].indexOf(targetName) != -1) {
+
+      console.log('found '+ targetName +' at postion '+ i + '\n');
+      // if it is our target
+
+      var target = files.splice(i, 1)[0];
+      // pull it out of the array.
+
+      console.log('targetName is '+ target +'\n');
+
+      files.push(target);
+      // and move it to the end of the array.
+
+      break;
+      // end the for loop, we got what we needed.
+    } // end if
+  } // end for loop
+  return files;
+}
+
 
 exports.create = function(source, destination) {
   // resolve source
@@ -105,32 +130,12 @@ exports.create = function(source, destination) {
   console.log('name of new file set to '+ fcstd.name);
 
   dir.files(source, function(err, files) {
-    // find all files in source directory
-
+  // find all files in source directory
     if (err) throw err;
 
-    for (var i=0; i<files.length; i++) {
-    // for each file path in the returned array.
-      console.log('checking '+ files[i] +' for Document.xml');
-
-      if (files[i].indexOf('Document.xml') != -1) {
-
-        console.log('found Document.xml at postion '+ i + '\n');
-        // if it is Document.xml...
-
-        var docXml = files.splice(i, 1)[0];
-        // pull it out of the array.
-
-        console.log('docXml is '+ docXml +'\n');
-
-        files.push(docXml);
-        // and move it to the end of the array.
-
-        break;
-        // end the for loop, we got what we needed.
-
-      } // end if
-    } // end for loop
+    files = sortFcstdArray(files, 'GuiDocument.xml');
+    files = sortFcstdArray(files, 'Document.xml');
+    console.log('files');
 
     exports.addFilesToZip(files, fcstd, function(newFcstd) {
     // add the files to the zip,
