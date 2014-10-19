@@ -1,0 +1,621 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+ FreeCAD Document, see http://free-cad.sourceforge.net for more information...
+-->
+<Document SchemaVersion="4">
+	<Properties Count="9">
+		<Property name="Comment" type="App::PropertyString">
+			<String value=""/>
+		</Property>
+		<Property name="Company" type="App::PropertyString">
+			<String value=""/>
+		</Property>
+		<Property name="CreatedBy" type="App::PropertyString">
+			<String value=""/>
+		</Property>
+		<Property name="CreationDate" type="App::PropertyString">
+			<String value="Mon Jul 28 19:29:37 2014 "/>
+		</Property>
+		<Property name="FileName" type="App::PropertyString">
+			<String value="/home/brady/Dropbox/OSATT/CAD/teapot_with_shapes/teapot_with_shapes.fcstd"/>
+		</Property>
+		<Property name="Id" type="App::PropertyString">
+			<String value="2c2aa4dd-5bf2-43bd-9505-1b5f519ab02d"/>
+		</Property>
+		<Property name="Label" type="App::PropertyString">
+			<String value="teapot_with_shapes"/>
+		</Property>
+		<Property name="LastModifiedBy" type="App::PropertyString">
+			<String value=""/>
+		</Property>
+		<Property name="LastModifiedDate" type="App::PropertyString">
+			<String value="Mon Jul 28 20:49:07 2014 "/>
+		</Property>
+	</Properties>
+	<Objects Count="22">
+		<Object type="Part::Sphere" name="Sphere" />
+		<Object type="Part::Box" name="Box" />
+		<Object type="Part::Cut" name="Cut" />
+		<Object type="Part::Sphere" name="Sphere001" />
+		<Object type="Part::MultiFuse" name="Fusion" />
+		<Object type="Part::Cut" name="Cut002" />
+		<Object type="Part::Box" name="Box001" />
+		<Object type="Part::Cut" name="Cut001" />
+		<Object type="Part::Box" name="Box002" />
+		<Object type="Part::Sphere" name="Sphere002" />
+		<Object type="Part::Box" name="Box003" />
+		<Object type="Part::Cut" name="Cut003" />
+		<Object type="Part::Box" name="Box004" />
+		<Object type="Part::Cut" name="Cut004" />
+		<Object type="Part::Sphere" name="Sphere003" />
+		<Object type="Part::MultiFuse" name="Fusion001" />
+		<Object type="Part::Torus" name="Torus" />
+		<Object type="Part::MultiFuse" name="Fusion002" />
+		<Object type="Part::Torus" name="Torus001" />
+		<Object type="Part::Torus" name="Torus001001" />
+		<Object type="Part::Torus" name="Torus001002" />
+		<Object type="Part::MultiFuse" name="Fusion003" />
+	</Objects>
+	<ObjectData Count="22">
+		<Object name="Sphere">
+			<Properties Count="8">
+				<Property name="Angle1" type="App::PropertyFloatConstraint">
+					<Float value="-90.000000000000"/>
+				</Property>
+				<Property name="Angle2" type="App::PropertyFloatConstraint">
+					<Float value="90.000000000000"/>
+				</Property>
+				<Property name="Angle3" type="App::PropertyFloatConstraint">
+					<Float value="360.000000000000"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Sphere"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="0.000000000000" Py="0.000000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Radius" type="App::PropertyFloatConstraint">
+					<Float value="5.000000000000"/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape.brp"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Box">
+			<Properties Count="7">
+				<Property name="Height" type="App::PropertyLength">
+					<Float value="10.000000000000"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Box"/>
+				</Property>
+				<Property name="Length" type="App::PropertyLength">
+					<Float value="10.000000000000"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="-5.000000000000" Py="-13.000000000000" Pz="-4.800000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape1.brp"/>
+				</Property>
+				<Property name="Width" type="App::PropertyLength">
+					<Float value="10.000000000000"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Cut">
+			<Properties Count="6">
+				<Property name="Base" type="App::PropertyLink">
+					<Link value="Sphere"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Cut"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="0.000000000000" Py="0.000000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape2.brp"/>
+				</Property>
+				<Property name="Tool" type="App::PropertyLink">
+					<Link value="Box"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Sphere001">
+			<Properties Count="8">
+				<Property name="Angle1" type="App::PropertyFloatConstraint">
+					<Float value="-90.000000000000"/>
+				</Property>
+				<Property name="Angle2" type="App::PropertyFloatConstraint">
+					<Float value="90.000000000000"/>
+				</Property>
+				<Property name="Angle3" type="App::PropertyFloatConstraint">
+					<Float value="360.000000000000"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Sphere001"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="0.000000000000" Py="-5.900000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Radius" type="App::PropertyFloatConstraint">
+					<Float value="5.000000000000"/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape3.brp"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Fusion">
+			<Properties Count="5">
+				<Property name="Label" type="App::PropertyString">
+					<String value="Fusion"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="0.000000000000" Py="0.000000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape4.brp"/>
+				</Property>
+				<Property name="Shapes" type="App::PropertyLinkList">
+					<LinkList count="2">
+						<Link value="Cut"/>
+						<Link value="Sphere001"/>
+					</LinkList>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Cut002">
+			<Properties Count="6">
+				<Property name="Base" type="App::PropertyLink">
+					<Link value="Cut001"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Cut002"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="0.000000000000" Py="0.000000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape5.brp"/>
+				</Property>
+				<Property name="Tool" type="App::PropertyLink">
+					<Link value="Box002"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Box001">
+			<Properties Count="7">
+				<Property name="Height" type="App::PropertyLength">
+					<Float value="12.000000000000"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Box001"/>
+				</Property>
+				<Property name="Length" type="App::PropertyLength">
+					<Float value="12.000000000000"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="-6.000000000000" Py="-13.500000000000" Pz="-6.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape6.brp"/>
+				</Property>
+				<Property name="Width" type="App::PropertyLength">
+					<Float value="10.000000000000"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Cut001">
+			<Properties Count="6">
+				<Property name="Base" type="App::PropertyLink">
+					<Link value="Fusion"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Cut001"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="0.000000000000" Py="0.000000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape7.brp"/>
+				</Property>
+				<Property name="Tool" type="App::PropertyLink">
+					<Link value="Box001"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Box002">
+			<Properties Count="7">
+				<Property name="Height" type="App::PropertyLength">
+					<Float value="12.000000000000"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Box002"/>
+				</Property>
+				<Property name="Length" type="App::PropertyLength">
+					<Float value="12.000000000000"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="-6.000000000000" Py="2.000000000000" Pz="-6.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape8.brp"/>
+				</Property>
+				<Property name="Width" type="App::PropertyLength">
+					<Float value="10.000000000000"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Sphere002">
+			<Properties Count="8">
+				<Property name="Angle1" type="App::PropertyFloatConstraint">
+					<Float value="-90.000000000000"/>
+				</Property>
+				<Property name="Angle2" type="App::PropertyFloatConstraint">
+					<Float value="90.000000000000"/>
+				</Property>
+				<Property name="Angle3" type="App::PropertyFloatConstraint">
+					<Float value="360.000000000000"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Sphere002"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="0.000000000000" Py="-2.100000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Radius" type="App::PropertyFloatConstraint">
+					<Float value="6.000000000000"/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape9.brp"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Box003">
+			<Properties Count="7">
+				<Property name="Height" type="App::PropertyLength">
+					<Float value="12.000000000000"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Box003"/>
+				</Property>
+				<Property name="Length" type="App::PropertyLength">
+					<Float value="12.000000000000"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="-6.000000000000" Py="-8.000000000000" Pz="-6.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape10.brp"/>
+				</Property>
+				<Property name="Width" type="App::PropertyLength">
+					<Float value="10.000000000000"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Cut003">
+			<Properties Count="6">
+				<Property name="Base" type="App::PropertyLink">
+					<Link value="Sphere002"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Cut003"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="0.000000000000" Py="0.000000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape11.brp"/>
+				</Property>
+				<Property name="Tool" type="App::PropertyLink">
+					<Link value="Box003"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Box004">
+			<Properties Count="7">
+				<Property name="Height" type="App::PropertyLength">
+					<Float value="10.000000000000"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Box004"/>
+				</Property>
+				<Property name="Length" type="App::PropertyLength">
+					<Float value="10.000000000000"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="-3.000000000000" Py="-16.000000000000" Pz="-3.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape12.brp"/>
+				</Property>
+				<Property name="Width" type="App::PropertyLength">
+					<Float value="10.000000000000"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Cut004">
+			<Properties Count="6">
+				<Property name="Base" type="App::PropertyLink">
+					<Link value="Cut003"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Cut004"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="0.000000000000" Py="0.000000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape13.brp"/>
+				</Property>
+				<Property name="Tool" type="App::PropertyLink">
+					<Link value="Box004"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Sphere003">
+			<Properties Count="8">
+				<Property name="Angle1" type="App::PropertyFloatConstraint">
+					<Float value="-90.000000000000"/>
+				</Property>
+				<Property name="Angle2" type="App::PropertyFloatConstraint">
+					<Float value="90.000000000000"/>
+				</Property>
+				<Property name="Angle3" type="App::PropertyFloatConstraint">
+					<Float value="360.000000000000"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Sphere003"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="0.000000000000" Py="4.200000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Radius" type="App::PropertyFloatConstraint">
+					<Float value="0.349999994040"/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape14.brp"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Fusion001">
+			<Properties Count="5">
+				<Property name="Label" type="App::PropertyString">
+					<String value="lid"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="0.000000000000" Py="0.000000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape15.brp"/>
+				</Property>
+				<Property name="Shapes" type="App::PropertyLinkList">
+					<LinkList count="2">
+						<Link value="Cut004"/>
+						<Link value="Sphere003"/>
+					</LinkList>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Torus">
+			<Properties Count="9">
+				<Property name="Angle1" type="App::PropertyFloatConstraint">
+					<Float value="-180.000000000000"/>
+				</Property>
+				<Property name="Angle2" type="App::PropertyFloatConstraint">
+					<Float value="180.000000000000"/>
+				</Property>
+				<Property name="Angle3" type="App::PropertyFloatConstraint">
+					<Float value="200.000000000000"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Torus"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="-4.500000000000" Py="-0.500000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.649448003397" Q3="0.760406003977"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Radius1" type="App::PropertyFloatConstraint">
+					<Float value="2.000000000000"/>
+				</Property>
+				<Property name="Radius2" type="App::PropertyFloatConstraint">
+					<Float value="0.400000005960"/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape16.brp"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Fusion002">
+			<Properties Count="5">
+				<Property name="Label" type="App::PropertyString">
+					<String value="Body"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="0.000000000000" Py="0.000000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape17.brp"/>
+				</Property>
+				<Property name="Shapes" type="App::PropertyLinkList">
+					<LinkList count="2">
+						<Link value="Torus"/>
+						<Link value="Cut002"/>
+					</LinkList>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Torus001">
+			<Properties Count="9">
+				<Property name="Angle1" type="App::PropertyFloatConstraint">
+					<Float value="-60.000000000000"/>
+				</Property>
+				<Property name="Angle2" type="App::PropertyFloatConstraint">
+					<Float value="0.000000000000"/>
+				</Property>
+				<Property name="Angle3" type="App::PropertyFloatConstraint">
+					<Float value="360.000000000000"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Torus001"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="0.000000000000" Py="2.000000000000" Pz="0.000000000000" Q0="0.707106781187" Q1="0.000000000000" Q2="0.000000000000" Q3="0.707106781187"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Radius1" type="App::PropertyFloatConstraint">
+					<Float value="4.929999828339"/>
+				</Property>
+				<Property name="Radius2" type="App::PropertyFloatConstraint">
+					<Float value="0.500000000000"/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape18.brp"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Torus001001">
+			<Properties Count="9">
+				<Property name="Angle1" type="App::PropertyFloatConstraint">
+					<Float value="-60.000000000000"/>
+				</Property>
+				<Property name="Angle2" type="App::PropertyFloatConstraint">
+					<Float value="0.000000000000"/>
+				</Property>
+				<Property name="Angle3" type="App::PropertyFloatConstraint">
+					<Float value="360.000000000000"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Torus001001"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="0.000000000000" Py="2.000000000000" Pz="0.000000000000" Q0="0.707106781187" Q1="0.000000000000" Q2="0.000000000000" Q3="0.707106781187"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Radius1" type="App::PropertyFloatConstraint">
+					<Float value="5.099999904633"/>
+				</Property>
+				<Property name="Radius2" type="App::PropertyFloatConstraint">
+					<Float value="0.500000000000"/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape19.brp"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Torus001002">
+			<Properties Count="9">
+				<Property name="Angle1" type="App::PropertyFloatConstraint">
+					<Float value="-180.000000000000"/>
+				</Property>
+				<Property name="Angle2" type="App::PropertyFloatConstraint">
+					<Float value="0.000000000000"/>
+				</Property>
+				<Property name="Angle3" type="App::PropertyFloatConstraint">
+					<Float value="360.000000000000"/>
+				</Property>
+				<Property name="Label" type="App::PropertyString">
+					<String value="Torus001002"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="0.000000000000" Py="2.430000000000" Pz="0.000000000000" Q0="0.707106781187" Q1="0.000000000000" Q2="0.000000000000" Q3="0.707106781187"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Radius1" type="App::PropertyFloatConstraint">
+					<Float value="4.750000000000"/>
+				</Property>
+				<Property name="Radius2" type="App::PropertyFloatConstraint">
+					<Float value="0.100000001490"/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape20.brp"/>
+				</Property>
+			</Properties>
+		</Object>
+		<Object name="Fusion003">
+			<Properties Count="5">
+				<Property name="Label" type="App::PropertyString">
+					<String value="Fusion003"/>
+				</Property>
+				<Property name="Placement" type="App::PropertyPlacement">
+					<PropertyPlacement Px="0.000000000000" Py="0.000000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+				</Property>
+				<Property name="Pos" type="App::PropertyPlacementLink">
+					<Link value=""/>
+				</Property>
+				<Property name="Shape" type="Part::PropertyPartShape">
+					<Part file="PartShape21.brp"/>
+				</Property>
+				<Property name="Shapes" type="App::PropertyLinkList">
+					<LinkList count="3">
+						<Link value="Torus001"/>
+						<Link value="Torus001001"/>
+						<Link value="Torus001002"/>
+					</LinkList>
+				</Property>
+			</Properties>
+		</Object>
+	</ObjectData>
+</Document>

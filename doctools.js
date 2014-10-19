@@ -3,7 +3,7 @@ var jsz = require('jszip'),
     fs = require('node-fs'),
     path = require('path'),
     dir = require('node-dir'),
-    helpers = require('./helpers.js');
+    helpers = require('./helpers.js'),
 
 /*
  *  OSATT FreeCad files handler
