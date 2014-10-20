@@ -13,10 +13,14 @@ import xml.sax.handler
 import xml.sax.xmlreader
 import zipfile
 
-import sys
+# Custom additions by OSATT
+
+import time # for debugging
+
 action = sys.argv[1]
 filename = sys.argv[2]
 outpath = sys.argv[3]
+# End Custom additions by OSATT
 
 # SAX handler to parse the Document.xml
 class DocumentHandler(xml.sax.handler.ContentHandler):
@@ -54,12 +58,15 @@ def extractDocument(filename, outpath):
 
 def createDocument(filename, outpath):
   files=getFilesList(filename)
-  print "files: "+ files
+  # get a list of files in this directory
+
   compress=zipfile.ZipFile(outpath,'w',zipfile.ZIP_DEFLATED)
+  # create zipfile called compress.
+
   for i in files:
     dirs=os.path.split(i)
-		#print i, dirs[-1]
     compress.write(i,dirs[-1],zipfile.ZIP_DEFLATED)
+
   compress.close()
 
 def getFilesList(filename):
